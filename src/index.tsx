@@ -12,6 +12,7 @@ import React from 'react';
 import {Provider} from 'unstated';
 import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import * as eva from '@eva-design/eva';
 import Routes from './routes';
 
@@ -21,7 +22,9 @@ const App = () => {
       <IconRegistry icons={EvaIconsPack} />
       <Provider>
         <ApplicationProvider {...eva} theme={eva.light}>
-          <Routes />
+          <SafeAreaProvider>
+            <Routes />
+          </SafeAreaProvider>
         </ApplicationProvider>
       </Provider>
     </>

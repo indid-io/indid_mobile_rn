@@ -4,7 +4,7 @@ import {Layout, Text} from '@ui-kitten/components';
 import {uniStyles} from '../../assets/styles/styles';
 // import AppBar from '../components/AppBar';
 // {navigation}: {navigation: any}
-export default function Credentials() {
+export default function Settings() {
   return (
     <>
       <SafeAreaView style={[uniStyles.fullPage, uniStyles.bgWhite]}>

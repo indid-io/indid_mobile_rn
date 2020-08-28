@@ -9,6 +9,7 @@ import RecoverIdentity from './apps/screens/RecoverIdentity';
 import RecoverPhrase from './apps/screens/RecoverPhrase';
 import Landing from './apps/screens/Landing';
 import Credentials from './apps/screens/Credentials';
+import Settings from './apps/screens/Settings';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const Stack = createStackNavigator();
@@ -22,12 +23,13 @@ class Routes extends React.Component {
     this.setState({
       isLogged: await AsyncStorage.getItem('introduction'),
     });
-    AsyncStorage.clear();
+    // AsyncStorage.clear();
   }
 
   render() {
     return (
       <NavigationContainer>
+        {/* <Landing /> */}
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
@@ -44,11 +46,13 @@ class Routes extends React.Component {
               <Stack.Screen name="RecoverPhrase" component={RecoverPhrase} />
               <Stack.Screen name="Landing" component={Landing} />
               <Stack.Screen name="Credentials" component={Credentials} />
+              <Stack.Screen name="Settings" component={Settings} />
             </>
           ) : (
             <>
               <Stack.Screen name="Landing" component={Landing} />
               <Stack.Screen name="Credentials" component={Credentials} />
+              <Stack.Screen name="Settings" component={Settings} />
             </>
           )}
         </Stack.Navigator>

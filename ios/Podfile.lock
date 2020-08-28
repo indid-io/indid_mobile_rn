@@ -316,8 +316,6 @@ PODS:
   - RNUportSigner (1.6.1):
     - React
     - UPTEthereumSigner (~> 1.1.5)
-  - RNVectorIcons (7.0.0):
-    - React
   - UPTEthereumSigner (1.1.5):
     - EthCore (~> 1.0.9)
     - Valet (~> 2.4.2)
@@ -381,7 +379,6 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNUportSigner (from `../node_modules/react-native-uport-signer`)
-  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -470,8 +467,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNUportSigner:
     :path: "../node_modules/react-native-uport-signer"
-  RNVectorIcons:
-    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -522,12 +517,11 @@ SPEC CHECKSUMS:
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNUportSigner: 6f4968dd61b4e856bc6e93fa216b2a7268561923
-  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   UPTEthereumSigner: a14eb8bc74a2094499682f8c374bfd6066ce7440
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 945d3c44163a3478203cd1e2f485e823753a9308
+PODFILE CHECKSUM: ae4aba12195b78925ec83b649724e04df4a793e9
 
 COCOAPODS: 1.9.3

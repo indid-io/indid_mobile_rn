@@ -1,43 +1,59 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Icon} from '@ui-kitten/components';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-// import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import CreateIdentity from './CreateIdentity';
+import {
+  BottomNavigation,
+  BottomNavigationTab,
+  StyleService,
+  useStyleSheet,
+} from '@ui-kitten/components';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Settings from './Settings';
 import Credentials from './Credentials';
 
-const Tab = createMaterialBottomTabNavigator();
+const {Navigator, Screen} = createBottomTabNavigator();
 
 export default function Landing() {
+  const styles = useStyleSheet(themedStyles);
+
+  const BottomTabBar = ({navigation, state}: {navigation: any; state: any}) => (
+    <BottomNavigation
+      style={styles.barStyle}
+      selectedIndex={state.index}
+      onSelect={(index) => navigation.navigate(state.routeNames[index])}>
+      <BottomNavigationTab title="Credentials" />
+      <BottomNavigationTab title="Settings" />
+    </BottomNavigation>
+  );
+
+  const TabNavigator = () => (
+    <Navigator tabBar={(props: any) => <BottomTabBar {...props} />}>
+      <Screen name="Credentials" component={Credentials} />
+      <Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          title: 'Settings',
+          // tabBarIcon: ({focused, size}) => (
+          // <Icon
+          //   name="home"
+          //   color={focused ? '#282828' : 'grey'}
+          //   size={size}
+          // />
+          // ),
+        }}
+      />
+    </Navigator>
+  );
+
   return (
     <>
-      <Tab.Navigator
-        initialRouteName="Credentials"
-        activeColor="#FFF"
-        inactiveColor="#d1d1d1"
-        barStyle={styles.barStyle}>
-        <Tab.Screen
-          name="Credentials"
-          options={{
-            tabBarLabel: 'Home',
-            tabBarIcon: () => (
-              // <MaterialCommunityIcons name="home" color={color} size={26} />
-              <Icon name="arrow-back" />
-            ),
-          }}
-          component={Credentials}
-        />
-        <Tab.Screen name="CreateIdentity1" component={CreateIdentity} />
-        <Tab.Screen name="CreateIdentity2" component={CreateIdentity} />
-        <Tab.Screen name="CreateIdentity3" component={CreateIdentity} />
-        <Tab.Screen name="CreateIdentity4" component={CreateIdentity} />
-      </Tab.Navigator>
+      <TabNavigator />
     </>
   );
 }
 
-const styles = StyleSheet.create({
+const themedStyles = StyleService.create({
   barStyle: {
-    backgroundColor: '#f23a2e',
+    backgroundColor: 'color-danger-default',
+    color: 'color-success-default',
   },
 });
