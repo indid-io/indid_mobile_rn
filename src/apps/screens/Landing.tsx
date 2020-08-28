@@ -12,11 +12,11 @@ import Credentials from './Credentials';
 const {Navigator, Screen} = createBottomTabNavigator();
 
 export default function Landing() {
-  const styles = useStyleSheet(themedStyles);
+  // const styles = useStyleSheet(themedStyles);
 
   const BottomTabBar = ({navigation, state}: {navigation: any; state: any}) => (
     <BottomNavigation
-      style={styles.barStyle}
+      // style={styles.barStyle}
       selectedIndex={state.index}
       onSelect={(index) => navigation.navigate(state.routeNames[index])}>
       <BottomNavigationTab title="Credentials" />
