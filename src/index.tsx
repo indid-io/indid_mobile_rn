@@ -7,7 +7,7 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {Provider} from 'unstated';
 import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';

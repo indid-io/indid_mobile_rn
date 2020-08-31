@@ -120,6 +120,7 @@ export default function CreateIdentity({navigation}: {navigation: any}) {
               )}
             </Subscribe>
           </View>
+          <View style={uniStyles.safeBottomArea} />
         </ScrollView>
       </SafeAreaView>
     </>

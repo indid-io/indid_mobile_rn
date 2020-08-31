@@ -1,20 +1,17 @@
 import React from 'react';
 import {StyleSheet, View, SafeAreaView, ScrollView} from 'react-native';
-import {Subscribe} from 'unstated';
 import {Layout, Text} from '@ui-kitten/components';
 import {uniStyles} from '../../assets/styles/styles';
-import CardCredentials from '../components/CardCredentials';
-import CredentialsContainer from '../containers/CredentialsContainer';
 
-export default function Credentials() {
+export default function Notifications() {
   return (
     <>
       <SafeAreaView style={[uniStyles.fullPage, uniStyles.bgWhite]}>
+        <Layout style={styles.header}>
+          <Text category="h4">Notifications</Text>
+        </Layout>
         <ScrollView>
-          <Layout style={styles.header}>
-            <Text category="h4">Credentials</Text>
-          </Layout>
-          <Subscribe to={[CredentialsContainer]}>
+          {/* <Subscribe to={[CredentialsContainer]}>
             {(credentialsContainer: CredentialsContainer) => (
               <>
                 <Layout
@@ -32,7 +29,7 @@ export default function Credentials() {
                 </Layout>
               </>
             )}
-          </Subscribe>
+          </Subscribe> */}
           <View style={uniStyles.safeBottomArea} />
         </ScrollView>
       </SafeAreaView>
