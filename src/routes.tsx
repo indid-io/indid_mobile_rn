@@ -17,12 +17,13 @@ import Notifications from './apps/screens/Notifications';
 import Contacts from './apps/screens/Contacts';
 import {Button} from '@ui-kitten/components';
 import {uniStyles} from './assets/styles/styles';
+import {Colors} from './utils/colors';
 
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
-const ACTIVE_TAB_COLOR = '#BA1414';
-const INACTIVE_TAB_COLOR = '#636363';
+const ACTIVE_TAB_COLOR = Colors.RED;
+const INACTIVE_TAB_COLOR = Colors.PRIMARY;
 
 const ScanIcon = () => <Icon size={22} color="#FFF" name="qrcode-scan" />;
 
@@ -157,6 +158,7 @@ class Routes extends React.Component {
                 component={RecoverIdentity}
               />
               <Stack.Screen name="RecoverPhrase" component={RecoverPhrase} />
+              <Stack.Screen name="Landing" component={Tab} />
             </>
           ) : (
             <>

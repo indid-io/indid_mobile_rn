@@ -15,13 +15,14 @@ import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import * as eva from '@eva-design/eva';
 import Routes from './routes';
+import {default as theme} from '../custom-theme.json';
 
 const App = () => {
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
       <Provider>
-        <ApplicationProvider {...eva} theme={eva.light}>
+        <ApplicationProvider {...eva} theme={{...eva.light, ...theme}}>
           <SafeAreaProvider>
             <Routes />
           </SafeAreaProvider>

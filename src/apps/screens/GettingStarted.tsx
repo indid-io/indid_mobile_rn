@@ -16,7 +16,7 @@ function GettingStarted({navigation}: {navigation: any}) {
       {/* {(await AsyncStorage.getItem('introduction')) === 'done' ? (
         navigation.navigate('CreateIdentity')
       ) : ( */}
-      <Layout style={[uniStyles.fullPage, uniStyles.bgRed]}>
+      <Layout style={[uniStyles.fullPage, uniStyles.bgPrimary]}>
         <ImageBackground
           source={require('../../assets/images/fingerprint-white.png')}
           style={[styles.background, uniStyles.fullPage]}

@@ -6,6 +6,7 @@ import {Subscribe} from 'unstated';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import IntroductionContainer from '../containers/IntroductionContainer';
 import AppBar from '../components/AppBar';
+import {Colors} from '../../utils/colors';
 
 const _renderItem = ({item}: {item: any}) => {
   return (
@@ -26,7 +27,11 @@ const _renderNextButton = () => {
 };
 const _renderDoneButton = () => {
   return (
-    <Icon style={styles.icon} fill="#f23a2e" name="checkmark-circle-outline" />
+    <Icon
+      style={styles.icon}
+      fill={Colors.RED}
+      name="checkmark-circle-outline"
+    />
   );
 };
 
@@ -84,6 +89,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#BDBDBD',
   },
   activeDotStyle: {
-    backgroundColor: '#f23a2e',
+    backgroundColor: Colors.RED,
   },
 });

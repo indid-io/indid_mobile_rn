@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import {Colors} from '../../utils/colors';
 
 export const uniStyles = StyleSheet.create({
   fullPage: {
@@ -25,16 +26,19 @@ export const uniStyles = StyleSheet.create({
     color: '#bdbdbd',
   },
   textRed: {
-    color: '#f23a2e',
+    color: Colors.RED,
   },
   bgWhite: {
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.WHITE,
   },
   bgNetral: {
     backgroundColor: '#FAFAFA',
   },
   bgRed: {
-    backgroundColor: '#f23a2e',
+    backgroundColor: Colors.RED,
+  },
+  bgPrimary: {
+    backgroundColor: Colors.PRIMARY,
   },
   bgTransparent: {
     backgroundColor: 'transparent',
