@@ -6,7 +6,7 @@ import {Subscribe} from 'unstated';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import IntroductionContainer from '../containers/IntroductionContainer';
 import AppBar from '../components/AppBar';
-import {Colors} from '../../utils/colors';
+import {Colors} from '../../utils/Colors';
 
 const _renderItem = ({item}: {item: any}) => {
   return (

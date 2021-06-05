@@ -17,14 +17,14 @@ function GettingStarted({navigation}: {navigation: any}) {
         navigation.navigate('CreateIdentity')
       ) : ( */}
       <Layout style={[uniStyles.fullPage, uniStyles.bgPrimary]}>
-        <ImageBackground
+        {/* <ImageBackground
           source={require('../../assets/images/fingerprint-white.png')}
           style={[styles.background, uniStyles.fullPage]}
-        />
+        /> */}
         <View style={[styles.container, uniStyles.fullPage]}>
           <Image
             style={styles.logo}
-            source={require('../../assets/images/logo-white.png')}
+            source={require('../../assets/images/logo-new.png')}
           />
           <Text style={styles.text} category="s1">
             Get started by creating a new identity
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 200,
-    height: 200,
+    height: 50,
     marginBottom: 120,
   },
   button: {

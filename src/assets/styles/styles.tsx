@@ -1,5 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
-import {Colors} from '../../utils/colors';
+import {Colors} from '../../utils/Colors';
 
 export const uniStyles = StyleSheet.create({
   fullPage: {
@@ -84,5 +84,7 @@ export const uniStyles = StyleSheet.create({
     right: 20,
     borderRadius: 40,
     paddingHorizontal: 12,
+    backgroundColor: Colors.PRIMARY,
+    borderWidth: 0,
   },
 });

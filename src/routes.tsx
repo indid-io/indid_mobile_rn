@@ -17,22 +17,18 @@ import Notifications from './apps/screens/Notifications';
 import Contacts from './apps/screens/Contacts';
 import {Button} from '@ui-kitten/components';
 import {uniStyles} from './assets/styles/styles';
-import {Colors} from './utils/colors';
+import {Colors} from './utils/Colors';
 
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
-const ACTIVE_TAB_COLOR = Colors.RED;
-const INACTIVE_TAB_COLOR = Colors.PRIMARY;
+const ACTIVE_TAB_COLOR = Colors.PRIMARY;
+const INACTIVE_TAB_COLOR = Colors.GRAY;
 
 const ScanIcon = () => <Icon size={22} color="#FFF" name="qrcode-scan" />;
 
 const FloatingButton = () => (
-  <Button
-    style={uniStyles.floatingButton}
-    status="danger"
-    accessoryLeft={ScanIcon}
-  />
+  <Button style={uniStyles.floatingButton} accessoryLeft={ScanIcon} />
 );
 
 const Tab = () => {

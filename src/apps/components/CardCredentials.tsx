@@ -9,7 +9,7 @@ export default function CardCredentials(props: any) {
       <View
         style={[
           styles.topContainer,
-          uniStyles.bgRed,
+          uniStyles.bgPrimary,
           uniStyles.row,
           uniStyles.justifySpaceBetween,
         ]}>
