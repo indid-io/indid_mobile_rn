@@ -1,7 +1,7 @@
 import {Container} from 'unstated';
 import {createIdentityKeyPair} from '../../apis/identity';
 import AsyncStorage from '@react-native-community/async-storage';
-import {StackActions} from '@react-navigation/native';
+import {CommonActions, StackActions} from '@react-navigation/native';
 
 type IdentityState = {
   username: string;
@@ -47,8 +47,17 @@ class CreateIdentityContainer extends Container<IdentityState> {
         const lala = await createIdentityKeyPair();
         AsyncStorage.setItem('introduction', 'done');
 
-        const pushAction = StackActions.push('Landing');
-        navigation.dispatch(pushAction);
+        // const pushAction = StackActions.re('Landing');
+        navigation.dispatch(
+          CommonActions.reset({
+            routes: [
+              {
+                name: 'Landing',
+              },
+            ],
+            index: 0,
+          }),
+        );
 
         console.log(lala);
       } else if (!this.state.username.match(letters)) {

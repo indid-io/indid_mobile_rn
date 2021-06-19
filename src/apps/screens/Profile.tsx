@@ -17,7 +17,7 @@ export default function Profile() {
             style={[
               styles.header,
               uniStyles.row,
-              uniStyles.bgRed,
+              uniStyles.bgPrimary,
               uniStyles.justifyEnd,
             ]}>
             <Button
@@ -31,7 +31,7 @@ export default function Profile() {
             style={[
               uniStyles.fullWidth,
               uniStyles.column,
-              uniStyles.bgRed,
+              uniStyles.bgPrimary,
               uniStyles.alignItemsCenter,
             ]}>
             <Avatar

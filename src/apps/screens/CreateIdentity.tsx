@@ -15,6 +15,7 @@ import {Subscribe} from 'unstated';
 import CreateIdentityContainer from '../containers/CreateIdentityContainer';
 import AppBar from '../components/AppBar';
 import {uniStyles} from '../../assets/styles/styles';
+import {Colors} from '../../utils/Colors';
 
 export default function CreateIdentity({navigation}: {navigation: any}) {
   const renderCreateButton = () => (
@@ -51,10 +52,7 @@ export default function CreateIdentity({navigation}: {navigation: any}) {
                       style={styles.avatar}
                       source={require('../../assets/images/avatar.png')}
                     />
-                    <Button
-                      style={styles.btnUpload}
-                      appearance="ghost"
-                      status="danger">
+                    <Button style={styles.btnUpload} appearance="ghost">
                       Upload photo
                     </Button>
                     <Tooltip
@@ -72,10 +70,10 @@ export default function CreateIdentity({navigation}: {navigation: any}) {
                       <CheckBox
                         style={styles.checkbox}
                         checked={identity.state.terms}
+                        status=""
                         onChange={(_) =>
                           identity.onTermsOrPolicyClicked('terms')
-                        }
-                        status="danger">
+                        }>
                         Accept terms and conditions
                       </CheckBox>
                       <Button
@@ -92,8 +90,7 @@ export default function CreateIdentity({navigation}: {navigation: any}) {
                         checked={identity.state.policy}
                         onChange={(_) =>
                           identity.onTermsOrPolicyClicked('policy')
-                        }
-                        status="danger">
+                        }>
                         Accept privacy policy
                       </CheckBox>
                       <Button
@@ -111,8 +108,7 @@ export default function CreateIdentity({navigation}: {navigation: any}) {
                       }
                       onPress={() =>
                         identity.onCreateIdentityClicked(navigation)
-                      }
-                      status="danger">
+                      }>
                       Create Identity
                     </Button>
                   </Layout>
@@ -151,6 +147,8 @@ const styles = StyleSheet.create({
     width: '86%',
     marginTop: 30,
     marginHorizontal: '7%',
+    backgroundColor: Colors.PRIMARY,
+    borderWidth: 0,
   },
   btnUpload: {
     width: '80%',

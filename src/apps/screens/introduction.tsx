@@ -89,6 +89,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#BDBDBD',
   },
   activeDotStyle: {
-    backgroundColor: Colors.RED,
+    backgroundColor: Colors.PRIMARY,
   },
 });
