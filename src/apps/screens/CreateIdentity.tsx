@@ -44,7 +44,7 @@ export default function CreateIdentity({navigation}: {navigation: any}) {
               {(identity: CreateIdentityContainer) => (
                 <>
                   <Layout style={styles.container}>
-                    <Text category="h4">Personalize INDID</Text>
+                    <Text category="h4">Personalize Edvisee ID</Text>
                     <Text style={styles.subcontent}>
                       Add your name and optional photo
                     </Text>

@@ -15,9 +15,12 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Profile from './apps/screens/Profile';
 import Notifications from './apps/screens/Notifications';
 import Contacts from './apps/screens/Contacts';
+import ScanQRCode from './apps/screens/ScanQRCode';
 import {Button} from '@ui-kitten/components';
 import {uniStyles} from './assets/styles/styles';
 import {Colors} from './utils/Colors';
+
+import {navigationRef} from './RootNavigation';
 
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -27,8 +30,18 @@ const INACTIVE_TAB_COLOR = Colors.GRAY;
 
 const ScanIcon = () => <Icon size={22} color="#FFF" name="qrcode-scan" />;
 
-const FloatingButton = () => (
-  <Button style={uniStyles.floatingButton} accessoryLeft={ScanIcon} />
+const FloatingButton = (props: any) => (
+  <Button
+    style={uniStyles.floatingButton}
+    accessoryLeft={ScanIcon}
+    onPress={() => {
+      if (props?.onPress) {
+        props.onPress();
+      } else {
+        console.log('BAGONG');
+      }
+    }}
+  />
 );
 
 const Tab = () => {
@@ -120,7 +133,13 @@ const Tab = () => {
           name="Settings"
         />
       </BottomTab.Navigator>
-      <FloatingButton />
+      <FloatingButton
+        onPress={() => {
+          if (navigationRef.current) {
+            navigationRef.current.navigate('ScanQRCode');
+          }
+        }}
+      />
     </>
   );
 };
@@ -139,7 +158,7 @@ class Routes extends React.Component {
 
   render() {
     return (
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
@@ -159,6 +178,7 @@ class Routes extends React.Component {
           ) : (
             <>
               <Stack.Screen name="Landing" component={Tab} />
+              <Stack.Screen name="ScanQRCode" component={ScanQRCode} />
             </>
           )}
         </Stack.Navigator>
